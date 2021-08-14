@@ -2,7 +2,7 @@
 
 [ext_resource path="res://icon.png" type="Texture" id=1]
 [ext_resource path="res://Alien detection/test.png" type="Texture" id=2]
-[ext_resource path="res://Alien detection/Main.gd" type="Script" id=3]
+[ext_resource path="res://Alien detection/Button_Calc_Alien.gd" type="Script" id=3]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource( 3 )
