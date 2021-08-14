@@ -1,7 +1,9 @@
 extends Node
 
 var held_object = null
-var lastMousePos = Vector2(0.0,0.0)
+
+var lastMousePos = Vector2(0,0)
+var currentMousePos = Vector2(0,0)
 
 func _ready():
 	for node in get_tree().get_nodes_in_group("pickable"):
@@ -12,11 +14,20 @@ func _on_pickable_clicked(object):
 		held_object = object
 		held_object.pickup()
 
+func _input(event):
+	if event is InputEventMouseMotion:
+		lastMousePos = currentMousePos
+		currentMousePos = event.position
+
 func _unhandled_input(event):
+
+
+			
 	if event is InputEventMouseButton:
 		if event.button_index == BUTTON_LEFT:
 			if held_object and !event.pressed: #Object is released
-				held_object.drop(Input.get_last_mouse_speed())
+				held_object.drop(currentMousePos-lastMousePos)
+				
 				held_object = null
 		if event.button_index == BUTTON_WHEEL_UP: #Object is held and scrolling up
 			held_object.rotate_object(1)
