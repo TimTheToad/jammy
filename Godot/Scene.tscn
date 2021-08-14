@@ -4,32 +4,73 @@
 [ext_resource path="res://Object.gd" type="Script" id=2]
 [ext_resource path="res://main.gd" type="Script" id=3]
 
-[sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 320.67, 31.739 )
-
 [sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 557.454, 182.915 )
+
+[sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 31.8774, 31.7431 )
 
 [node name="main" type="Node"]
 script = ExtResource( 3 )
 
 [node name="floor" type="StaticBody2D" parent="."]
-position = Vector2( 320.49, 502.865 )
+position = Vector2( 506.546, 779.915 )
 __meta__ = {
 "_edit_group_": true
 }
 
 [node name="Sprite" type="Sprite" parent="floor"]
-scale = Vector2( 10.036, 1 )
+scale = Vector2( 14.0348, 1 )
 texture = ExtResource( 1 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="floor"]
-shape = SubResource( 2 )
+shape = SubResource( 1 )
+
+[node name="floor2" type="StaticBody2D" parent="."]
+position = Vector2( 499.273, -181.128 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="floor2"]
+scale = Vector2( 14.0348, 1 )
+texture = ExtResource( 1 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="floor2"]
+shape = SubResource( 1 )
+
+[node name="floor3" type="StaticBody2D" parent="."]
+position = Vector2( 1201.63, 274.715 )
+rotation = 1.5708
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="floor3"]
+scale = Vector2( 10.036, 1 )
+texture = ExtResource( 1 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="floor3"]
+shape = SubResource( 1 )
+
+[node name="floor4" type="StaticBody2D" parent="."]
+position = Vector2( -182.076, 299.316 )
+rotation = 1.5708
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="floor4"]
+scale = Vector2( 10.036, 1 )
+texture = ExtResource( 1 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="floor4"]
+shape = SubResource( 1 )
 
 [node name="cube" type="RigidBody2D" parent="." groups=[
 "pickable",
 ]]
-position = Vector2( 311.751, 67.2508 )
+position = Vector2( 320.662, 200.57 )
 input_pickable = true
 script = ExtResource( 2 )
 __meta__ = {
@@ -37,7 +78,7 @@ __meta__ = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="cube"]
-shape = SubResource( 1 )
+shape = SubResource( 2 )
 
 [node name="Sprite" type="Sprite" parent="cube"]
 texture = ExtResource( 1 )
