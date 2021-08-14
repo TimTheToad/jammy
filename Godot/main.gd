@@ -19,10 +19,8 @@ func _unhandled_input(event):
 				held_object.drop(Input.get_last_mouse_speed())
 				held_object = null
 		if event.button_index == BUTTON_WHEEL_UP: #Object is held and scrolling up
-			print("scrolling UP")
 			held_object.rotate_object(1)
 		if event.button_index == BUTTON_WHEEL_DOWN: #Object is held and scrolling down
-			print("scrolling DOWN")			
 			held_object.rotate_object(-1)
 
 			
